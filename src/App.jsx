@@ -9,6 +9,7 @@ import Header from "./components/headet/Header";
 import CreateProduct from "./components/createProduct/CreateProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Detail from "./components/detail/Detail";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Auth />}>
           <Route path="home" element={<Home />} />
           <Route path="CreateProducts" element={<CreateProduct />} />
+          <Route path="products/:id" element={<Detail />} />
         </Route>
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
