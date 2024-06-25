@@ -3,7 +3,7 @@ import { useGetProductsQuery } from "../../context/slice/ProductApi";
 import { Link } from "react-router-dom";
 
 const Product = () => {
-  const { data } = useGetProductsQuery({ limit: 50 });
+  const { data } = useGetProductsQuery({ limit: 52 });
   const card = data?.data?.products?.map((product) => (
     <div className="card" key={product.id}>
       <img src={product.urls[0]} alt="" />
