@@ -7,7 +7,7 @@ const Product = () => {
     <div className="card" key={product.id}>
       <img src={product.urls[0]} alt="" />
       <h3>{product.title}</h3>
-      <p>{product.proce}</p>
+      <b>$ {product.price}</b>
     </div>
   ));
   console.log(data?.data?.products);
