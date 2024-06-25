@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import "./scss/main.scss";
+import { Route, Routes } from "react-router-dom";
+import Auth from "./pages/auth/Auth";
+import Product from "./components/product/Product";
+import Header from "./components/headet/Header";
+import CreateProduct from "./components/createProduct/CreateProduct";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Auth />}>
+          <Route path="home" element={<Home />} />
+          <Route path="CreateProducts" element={<CreateProduct />} />
+        </Route>
+        <Route path="*" element={<h1>404</h1>} />
+      </Routes>
+      <ToastContainer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
