@@ -8,7 +8,7 @@ const Home = () => {
     <div>
       {userData?.role === "owner" ? (
         <>
-          <Product />
+          <Product isAdmin={true} />
         </>
       ) : (
         <Product />
